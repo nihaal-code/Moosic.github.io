@@ -10,7 +10,9 @@
     }
 
     #moosic-text {
-      font-family: 'Dancing Script', cursive;
+      font-weight: bold;
+      text-align: center;
+      display: block;
       font-size: 48px;
       color: #fff;
       animation: fade-in 2s ease-in-out;
@@ -24,22 +26,25 @@
         opacity: 1;
       }
     }
+    @keyframes shine {
+      0% {
+        color: #fff;
+      }
+      50% {
+        color: #fff788;
+      }
+      100% {
+        color: #fff;
+      }
+    }
+
+    #moosic-text {
+      animation-fill-mode: backwards;
+      animation: shine 2s ease-in-out infinite;
+    }
   </style>
 </head>
 <body>
   <span id="moosic-text">Moosic</span>
-
-  <script>
-    const moosicText = document.getElementById('moosic-text');
-
-    function blink() {
-      moosicText.style.color = '#fff';
-      setTimeout(() => {
-        moosicText.style.color = '#fff788'; // Shiny white color
-      }, 500);
-      setTimeout(blink, 1000); // Repeat blinking animation every second
-    }
-    blink(); // Start blinking animation
-  </script>
 </body>
 </html>
