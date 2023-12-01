@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moosic</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+
+    #moosic-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: 48px;
+      color: #fff;
+      animation: fade-in 2s ease-in-out;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <span id="moosic-text">Moosic</span>
+
+  <script>
+    const moosicText = document.getElementById('moosic-text');
+
+    function blink() {
+      moosicText.style.color = '#fff';
+      setTimeout(() => {
+        moosicText.style.color = '#fff788'; // Shiny white color
+      }, 500);
+      setTimeout(blink, 1000); // Repeat blinking animation every second
+    }
+    blink(); // Start blinking animation
+  </script>
+</body>
+</html>
